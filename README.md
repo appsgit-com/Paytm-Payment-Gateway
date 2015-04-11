@@ -1,4 +1,4 @@
-# Paytm-Payment-Gateway
+# Paytm PHP Payment Gateway (unofficial)
 Unofficial PayTM Payment gateway API written in PHP, that asks user for his transaction ID (of sending PayTM cash) and matches if that ID exist with a certain amount. Contents: 1. Scenario, 2. Working, 3. Features, 4. Instructions.
 
 **Scenario**:
