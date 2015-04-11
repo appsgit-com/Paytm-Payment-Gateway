@@ -1,9 +1,11 @@
 <?php
 
+$apikey = "mykey"
 $txnid = "1B5D6E10FCE0019";
 $amt   = "2250.0";
 
 $fields = array(
+    'apikey' => urlencode($apikey),
     'txnid' => urlencode($txnid),
     'amount' => urlencode($amt)
 );
