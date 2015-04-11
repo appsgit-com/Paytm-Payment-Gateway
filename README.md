@@ -43,6 +43,12 @@ Send a HTTP POST request to paytm.php with required three POST parameters:
 A cURL example:
 
     curl "http://site.com/paytm.php" --data="apikey=blah&txnid=EIO1028EABC5564&amount=4411.0"
+
+A "type" JSON object will be returned, if "type" is "success" then transaction is valid, or else it is not:
+`{"type":"success", "msg":"Transaction verified"}`
+
+`{"type":"error", "msg":"an error message here"}`
+
 See example.php for a sample PHP code.
 
 If you find any issue, do let know :)
