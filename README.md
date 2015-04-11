@@ -32,6 +32,8 @@ Open file validatePaytm.php and enter a unique, secure and memorable API key, yo
     $gmailpassword = "your gmail password";
     //Nothing else to change now
 
+Enable access to less secure apps and unlock captcha for your Google account using https://www.google.com/settings/security/lesssecureapps and https://accounts.google.com/b/0/DisplayUnlockCaptcha.
+
 Send a HTTP POST request to paytm.php with required three POST parameters:
 
  1. **apikey**: Your API key that is in validatePaytm.php
