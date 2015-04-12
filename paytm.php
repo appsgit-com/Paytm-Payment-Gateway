@@ -32,8 +32,10 @@ if ($matchTxn !== false) {
             "msg" => "Transaction found, but not of Rs.$amount."
         )));
     }
-    //delete that email to avoid multiple submissions
-    $f = imap_mail_move($connection, "$e:$e", '[Gmail]/Bin');
+    if ($onetime === '1') {
+        //delete that email to avoid multiple submissions
+        $f = imap_mail_move($connection, "$e:$e", '[Gmail]/Bin');
+    }
     die(json_encode(array(
         "type" => "success",
         "msg" => "Verified"
@@ -47,4 +49,4 @@ if ($matchTxn !== false) {
 }
 
 
-?>
+?
