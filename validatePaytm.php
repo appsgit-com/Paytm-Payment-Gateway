@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(0);
+
 //change these details
 $allowedkey    = "enter anything secure you can remember";
 $gmailuser     = "your gmail id registered on paytm";
@@ -40,6 +42,15 @@ if (!isset($_POST['amount']) || empty($_POST['amount'])) {
 
 $txnid  = $_POST['txnid'];
 $amount = $_POST['amount'];
+
+if ($_POST['onetime'] !== in_array(array(
+    "1",
+    "0"
+))) {
+    $onetime = '1';
+} else {
+    $onetime = $_POST['onetime'];
+}
 
 //match API key
 if ($_POST['apikey'] !== $allowedkey) {
