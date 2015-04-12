@@ -34,15 +34,16 @@ Open file validatePaytm.php and enter a unique, secure and memorable API key, yo
 
 Enable access to less secure apps and unlock captcha for your Google account using https://www.google.com/settings/security/lesssecureapps and https://accounts.google.com/b/0/DisplayUnlockCaptcha.
 
-Send a HTTP POST request to paytm.php with required three POST parameters:
+Send a HTTP POST request to paytm.php with three required POST parameters:
 
- 1. **apikey**: Your API key that is in validatePaytm.php
- 2. **txnid**: The transaction ID
- 3. **amount**: Amount to check, eg. for Rs.1440 use 1440.0
+ 1. **apikey**: Your API key that is in validatePaytm.php, required
+ 2. **txnid**: The transaction ID, required
+ 3. **amount**: Amount to check, eg. for Rs.1440 use 1440.0, required
+ 4. **onetime**: Set value to either 1 or 0, 1 means means that if the transaction is verified then the given transaction ID cannot be used again, 0 means that transaction ID can be used multiple times even if the transaction is verfified. If no value or invalid value will be provided then 1 will be used by default, optional.
 
 A cURL example:
 
-    curl "http://site.com/paytm.php" --data "apikey=blah&txnid=EIO1028EABC5564&amount=4411.0"
+    curl "http://site.com/paytm.php" --data "apikey=blah&txnid=EIO1028EABC5564&amount=4411.0&onetime=1"
 
 A "type" JSON object will be returned, if "type" is "success" then transaction is valid, or else it is not:
 `{"type":"success", "msg":"Verified"}`
